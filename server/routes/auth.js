@@ -53,7 +53,7 @@ authRouter.post("/api/signin", async (req, res) => {
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
-});
+}); 
 
 authRouter.post("/tokenIsValid", async (req, res) => {
   try {
@@ -63,7 +63,6 @@ authRouter.post("/tokenIsValid", async (req, res) => {
     const verified = jwt.verify(token, "passwordKey");
     if (!verified) return res.json(false);
     const user = await User.findById(verified.id);
-    console.log(user);
     if (!user) return res.json(false);
     res.json(true);
   } catch (e) {

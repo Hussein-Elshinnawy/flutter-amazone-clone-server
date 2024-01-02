@@ -2,8 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config()
 const dbPass=process.env.dbPass;
-const DB = `mongodb+srv://clorkthefirst:${dbPass}@cluster0.wesy67v.mongodb.net/?retryWrites=true&w=majority`;
-// const DB='mongodb+srv://clorkthefirst:${process.env.dbPass}@cluster0.wesy67v.mongodb.net/?retryWrites=true&w=majority';
+const dbUsername=process.env.dbUsername;
+const DB = `mongodb+srv://${dbUsername}:${dbPass}@cluster0.wesy67v.mongodb.net/?retryWrites=true&w=majority`;
+
 
 const authRouter= require("./routes/auth.js");// this to import ath auth.js to use it
 

@@ -10,6 +10,7 @@ const authRouter= require("./routes/auth.js");// this to import ath auth.js to u
 
 const adminRouter = require('./routes/admin.js');
 const productRouter= require("./routes/product.js");
+const userRouter= require("./routes/user.js");
 
 
 const PORT = 3001;
@@ -19,6 +20,8 @@ app.use(express.json());
 app.use(authRouter);
 app.use(adminRouter);
 app.use(productRouter);
+app.use(userRouter);
+
 // to connect to data base and since it's future promise we use then() works like await
 mongoose.connect(DB).then(()=>{
     console.log('connection successful');

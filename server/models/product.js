@@ -30,11 +30,9 @@ const productSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  rating:[
-    ratingSchema
-  ],
+  ratings:[ratingSchema],
 
 });
 
 const Product = mongoose.model("Product", productSchema);
-module.exports = { Product, productSchema };
+module.exports = { Product, productSchema };// to send more than 1 object we {} this way we send a map 
